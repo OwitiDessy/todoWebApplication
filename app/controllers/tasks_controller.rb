@@ -14,6 +14,15 @@ class TasksController < ApplicationController
     render json: task
   end
 
+  # so we need to add the delete endpoint to the controller
+  # lastly, re-render all the items (which will no longer include the deleted one)
+  def destroy
+    #Code below indicates that given the id that's passed through the params we should load the correct item from the database.
+    task = Task.find(params[:id])
+    task.destroy(task_params) 
+    #render json: task
+  end  
+
   private
 
   def task_params

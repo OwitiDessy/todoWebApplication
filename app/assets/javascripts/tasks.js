@@ -11,10 +11,15 @@ $(function() {
         checkedStatus +
         '><label>' +
         task.title +
-        '</label></div></li>';
+        '<span class="x" >X</span></label></div></li>';
 
       return liElement;
     }
+
+    // bind the X to a new Javascript function 
+    // that new function needs to hit a delete endpoint in the controller
+    // so we need to add the delete endpoint to the controller
+    // lastly, re-render all the items (which will no longer include the deleted one)
 
     // toggleTask takes in an HTML representation of the
     // an event that fires from an HTML representation of
@@ -40,6 +45,30 @@ $(function() {
 
     }
 
+    function deleteTask(e) {
+      console.log('CLICKED');
+      //var itemId = $(e.target).data("id");
+    // bind the X to a new Javascript function 
+      //$.destroy("/tasks" + itemId, {type: "DELETE"}).success(function(data){ //when data is successfully retrieved we will be pinged
+        //var htmlString = taskHtml(data); //goes through aka iterates through each item in taskHtml then and assign each item the variable name htmlString
+        //var ulTodos = $('.todo-list'); //pulls aka extract todo list off page
+        //$('#x').click(toggleTask); //we pull aka extract the x from the page $('#x')and then when x is clicked...
+      
+        //$.get("/tasks").success( function( data ) {
+          //var htmlString = "";
+
+          //$.each(data, function(index,  task) {
+            //htmlString += taskHtml(task);
+          //});
+         // var ulTodos = $('.todo-list');
+          //ulTodos.html(htmlString);
+
+          //$('.toggle').change(toggleTask);
+
+        //});
+      //});
+    }
+
     $.get("/tasks").success( function( data ) {
       var htmlString = "";
 
@@ -50,7 +79,7 @@ $(function() {
       ulTodos.html(htmlString);
 
       $('.toggle').change(toggleTask);
-
+      $('.x').click(deleteTask);
     });
 
 
@@ -69,6 +98,7 @@ $(function() {
         $('.toggle').click(toggleTask);
         $('.new-todo').val('');
       });
+      
     });
 
   });
