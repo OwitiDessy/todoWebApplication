@@ -52,11 +52,11 @@ $(function() {
     }
 
     function deleteTask(e) {
-      //console.log('CLICKED');
+      console.log('CLICKED');
 
-      $( "#x" ).click(function() {
-        $( ".task" ).remove();
-      });
+      //$( "#x" ).click(function() {
+        //$( ".task" ).remove();
+      //});
       
     // bind the X to a new Javascript function 
       //$.destroy("/tasks" + itemId, {type: "DELETE"}).success(function(data){ //when data is successfully retrieved we will be pinged
