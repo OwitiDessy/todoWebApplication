@@ -17,10 +17,10 @@ $(function() {
     }
 
 
-
+///Working on Delete task in this section
     var spanDelete = document.createElement("span");
     spanDelete.setAttribute("class", "delete");
-    spanDelete.onclick = deleteItem;
+    spanDelete.onclick = deleteTask;
 
     // bind the X to a new Javascript function 
     // that new function needs to hit a delete endpoint in the controller
