@@ -52,8 +52,12 @@ $(function() {
     }
 
     function deleteTask(e) {
-      console.log('CLICKED');
-      //var itemId = $(e.target).data("id");
+      //console.log('CLICKED');
+
+      $( "#x" ).click(function() {
+        $( ".task" ).remove();
+      });
+      
     // bind the X to a new Javascript function 
       //$.destroy("/tasks" + itemId, {type: "DELETE"}).success(function(data){ //when data is successfully retrieved we will be pinged
         //var htmlString = taskHtml(data); //goes through aka iterates through each item in taskHtml then and assign each item the variable name htmlString
