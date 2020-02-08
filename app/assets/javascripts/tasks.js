@@ -19,7 +19,8 @@ $(function() {
 
 
     var spanDelete = document.createElement("span");
-    spanDelete.setAttribute("id", task.id);
+    spanDelete.setAttribute("class", "delete");
+    spanDelete.onclick = deleteItem;
 
     // bind the X to a new Javascript function 
     // that new function needs to hit a delete endpoint in the controller
